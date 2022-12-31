@@ -2,9 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Article Sentiment Analysis</title>
 </head>
 <body>
-    
+    <header class="pageHeader">
+        <h1 class="mainHeader">Analize the sentiment of a text!</h1>
+        <main class="content">
+            <section class="form">
+                <form onsubmit="return handleSubmit(event)">
+                    <textarea id="textToSend" type="textArea" name="input"
+                        rows=5 cols=40> Paste your text here!</textarea>
+                    <input id="submitButton" type="submit" value="submit"
+                    onclick="return handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                </form>
+            </section>
+            <section class="queryResults">
+                <h2>Query Results</h2>
+                <div class="resultsContainer"></div>
+            </section>
+        </main>
+    </header>
 </body>
 </html>
