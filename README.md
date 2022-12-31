@@ -14,7 +14,7 @@ We will build a web tool that allows users to run Natural Language Processing
 application to understand the human language, written or oral.
 
 You don't have to worry about NLP, because we will make use of an external
-api called Aylien to interact with their NLP system. This tool will help us
+api called MeaningCloud to interact with their NLP system. This tool will help us
 classify the information available in the article, like whether the content is
 subjective (opinion) or objective (fact-based) and whether it is positive,
 neutral, or negative in tone.
@@ -26,4 +26,4 @@ Following are the project prerequisites:
 * Build tool - Webpack. Using webpack, we will set up the app to have dev and
   prod environments, each with their own set of tools and commands.
 * External script - Service Worker
-* External API - Aylien
+* External API - MeaningCloud
