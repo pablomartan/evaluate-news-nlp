@@ -1,0 +1,9 @@
+@import '_variables';
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: $font-base;
+    color: $fg-color;
+}
