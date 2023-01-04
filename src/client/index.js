@@ -1,4 +1,6 @@
-import { handleSubmit } from './js/client'
+import { handleSubmit } from './js/formHandler'
+import { sendQuery, getInfo } from './js/srvInteract'
+import { updateUi } from './js/updateUi'
 
 import './styles/reset.scss'
 import './styles/base.scss'
@@ -8,5 +10,8 @@ import './styles/form.scss'
 import './styles/main.scss'
 
 export {
-    handleSubmit
+    handleSubmit,
+    sendQuery,
+    getInfo,
+    updateUi
 }
