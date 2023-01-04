@@ -1,11 +1,10 @@
 @import '_variables';
 
 footer {
-    background-color: $primary-color;
+    background-color: $theme-color;
     color: #fff;
     text-align: center;
     padding: 45px;
     max-height: 100px;
     width: 100%;
-    z-index: 6;
 }
