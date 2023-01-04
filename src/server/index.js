@@ -14,33 +14,40 @@ const portDev = 8081;
 const portProd = 8080;
 
 app.use(express.static('dist'));
+app.use(bodyParser());
 app.use(cors());
 
 const queryUrl = async (req, res) => {
     const formData = new FormData();
     formData.append('key', apiKey);
-    formData.append('lang', "auto");
-    formData.append('url', "https://theconversation.com/me-estoy-muriendo-y-te-lo-cuento-por-tiktok-lo-que-nos-ensenan-los-casos-de-charlie-y-olatz-vazquez-189323");
+    formData.append('lang', 'auto');
+    formData.append('url', req.body.url);
 
+    console.log('Querying API with url: ', req.body.url);
     const response = await fetch(queryBase, {
         method: 'POST',
         body: formData,
         redirect: 'follow'
     });
     try {
-    // TODO: Update UI with the data gotten from the API
         data = await response.json();
-        console.log(data);
     } catch(error) {
         console.log(error);
     }
 };
 
+const sendInfo = async (req, res) => {
+    res.send(JSON.stringify(data));
+}
+
 app.get('/', function(req, res) {
+    console.log('\n\nHey, I am being called!');
     res.sendFile('dist/index.html');
 });
 
 app.post('/query', queryUrl);
+
+app.get('/getInfo', sendInfo);
 
 app.listen(portDev, () => {
     console.log(`Server running on port ${portDev}`);
