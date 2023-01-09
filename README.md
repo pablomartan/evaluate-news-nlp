@@ -27,3 +27,12 @@ Following are the project prerequisites:
   prod environments, each with their own set of tools and commands.
 * External script - Service Worker
 * External API - MeaningCloud
+
+## How to use it
+### Development
+After you clone or download, run `npm install`. Then, `npm run build-dev` for
+the development of the client, and `npm start` to run the server in a
+separate port.
+
+### Production
+Not ready yet.
