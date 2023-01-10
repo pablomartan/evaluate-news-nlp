@@ -8,10 +8,9 @@ dotenv.config();
 const app = express();
 const apiKey = process.env.API_KEY;
 const queryBase = 'https://api.meaningcloud.com/sentiment-2.1';
-let data = {};
 
-const portDev = 8081;
-const portProd = 8080;
+//const port = 8081;
+const port = 8080;
 
 app.use(express.static('dist'));
 app.use(bodyParser());
@@ -29,26 +28,16 @@ const queryUrl = async (req, res) => {
         body: formData,
         redirect: 'follow'
     });
-    try {
-        data = await response.json();
-    } catch(error) {
-        console.log(error);
-    }
+    const data = await response.json();
+    res.send(JSON.stringify(data));
 };
 
-const sendInfo = async (req, res) => {
-    res.send(JSON.stringify(data));
-}
-
 app.get('/', function(req, res) {
-    console.log('\n\nHey, I am being called!');
     res.sendFile('dist/index.html');
 });
 
 app.post('/query', queryUrl);
 
-app.get('/getInfo', sendInfo);
-
-app.listen(portDev, () => {
-    console.log(`Server running on port ${portDev}`);
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
 });
