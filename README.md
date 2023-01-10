@@ -6,7 +6,7 @@ a natural language processing one. Specifically, it analyzes the sentiments of
 the text in a given text.
 
 This app takes a URL and sends it to [MeaningCloud Sentiment API](https://www.meaningcloud.com/developer/sentiment-analysis).
-When it gets the results back (it may take a while), it updates the content in
+When it gets the results back (it may take a while), it updates the content on
 the main page with some data about the [positivity](https://learn.meaningcloud.com/developer/sentiment-analysis/2.1/doc/response#score_tag)
 and the [sujectivity](https://learn.meaningcloud.com/developer/sentiment-analysis/2.1/doc/response#subjectivity),
 and prints some [example text](https://learn.meaningcloud.com/developer/sentiment-analysis/2.1/doc/response#sentence_list) taken from the analyzed page.
@@ -32,7 +32,7 @@ it from your browser through `localhost:8080`.
 
 ### Development
 To get a development build you will need to change the port the server runs on.
-To do so, open the server file (`src/server/index.js`), uncomment the line with
+To do so, open the server file (`src/server.js`), uncomment the line with
 `const port = 8081` and comment out the one with `const port = 8080`.
 
 Then, you can run `npm run build-dev` to get the client-side working (it will
