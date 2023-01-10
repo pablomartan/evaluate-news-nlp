@@ -1,4 +1,4 @@
-import { sendQuery } from '../src/client/js/srvInteract'
+import { sendQuery } from '../src/js/srvInteract'
 
 const mockUrl = { url: 'https://meresophistry.substack.com/p/seven-layers-of-listening' };
 

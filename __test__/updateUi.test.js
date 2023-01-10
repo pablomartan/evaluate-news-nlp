@@ -1,4 +1,4 @@
-import { updateUi } from '../src/client/js/updateUi'
+import { updateUi } from '../src/js/updateUi'
 import { JSDOM } from 'jsdom'
 const dom = new JSDOM();
 global.document = dom.window.document
