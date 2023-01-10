@@ -1,7 +1,7 @@
 async function sendQuery(input) {
     const urlObj = JSON.stringify({'url': input});
     try {
-        await fetch('http://localhost:8081/query', {
+        await fetch('http://localhost:8080/query', {
             method: 'POST',
             credentials: 'same-origin',
             headers: {
