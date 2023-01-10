@@ -5,7 +5,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
-    entry: './src/client/index.js',
+    entry: './src/index.js',
     output: {
         library: 'Client',
         libraryTarget: 'var'
@@ -26,7 +26,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebPackPlugin({
-            template: "./src/client/html/index.html",
+            template: "./src/html/index.html",
             filename: "./index.html"
         }),
         new WorkboxPlugin.GenerateSW()
