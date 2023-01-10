@@ -9,25 +9,19 @@ async function sendQuery(input) {
             },
             body: urlObj
         })
-        .then(Client.updateUi());
+        .then(async (response) => {
+            const parsedResponse = await response.json();
+            return parsedResponse;
+        })
+        .then((apiResponse) => {
+            Client.updateUi(apiResponse);
+        })
     }
     catch(error) {
         console.log(error);
     }
 }
 
-async function getInfo() {
-    const srvData = await fetch('http://localhost:8081/getInfo');
-    try {
-        const data = await srvData.json();
-        console.log(data);
-        return data;
-    } catch(error) {
-        console.log(`Error while fetching data from server! See error: ${error}`)
-    }
-}
-
 export {
-    sendQuery,
-    getInfo
+    sendQuery
 }
