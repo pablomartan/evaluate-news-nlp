@@ -1,14 +1,16 @@
-const updateUi = async (data) => {
+const updateUi = (data) => {
     const queryResults = document.getElementById('resultsContainer');
-    const infoToAttatch = await generateContent(data);
+    const infoToAttatch = generateContent(data);
     queryResults.append(infoToAttatch);
+
+    return 1;
 }
 
 const generateContent = (json) => {
     const fragment = document.createDocumentFragment();
     const sentences = json.sentence_list;
-    const subjectivity = json.subjectivity;
     const scoreTag = json.score_tag;
+    const subjectivity = json.subjectivity.toLowerCase();
 
     let polarity = '';
     switch(scoreTag) {
@@ -31,8 +33,9 @@ const generateContent = (json) => {
             polarity = 'none';
             break;
     }
+
     const newHeader = document.createElement('h3');
-    newHeader.innerHTML = `Text is <strong>${polarity}</strong> and <strong>${subjectivity.toLowerCase()}</strong>. Here are some example <strong>sentences</strong> from the text:\n`;
+    newHeader.innerHTML = `Text is <strong>${polarity}</strong> and <strong>${subjectivity}</strong>. Here are some example <strong>sentences</strong> from the text:\n`;
     fragment.appendChild(newHeader);
    
     for (let i = 1; i < 10; i += 2) {
@@ -45,6 +48,5 @@ const generateContent = (json) => {
 };
 
 export { 
-    updateUi,
-    generateContent
+    updateUi
 }

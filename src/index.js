@@ -12,6 +12,5 @@ import './styles/main.scss'
 export {
     handleSubmit,
     sendQuery,
-    getInfo,
     updateUi
 }
