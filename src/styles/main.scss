@@ -1,8 +1,13 @@
 @import '_variables';
 
+html, body {
+    height: 100%;
+}
+
 main {
     display: flex;
     flex-direction: column;
+    height: 100%;
     
     .queryResults {
         margin: 20px;
